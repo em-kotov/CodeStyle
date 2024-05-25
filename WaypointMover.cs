@@ -13,7 +13,7 @@ public class WaypointMover : MonoBehaviour
         _waypoints = new Transform[_waypointMain.childCount];
 
         for (int i = 0; i < _waypointMain.childCount; i++)
-            _waypoints[i] = _waypointMain.GetChild(i).GetComponent<Transform>();
+            _waypoints[i] = _waypointMain.GetChild(i).transform;
 
         if (_waypointIndex < 0 || _waypointIndex >= _waypoints.Length)
             _waypointIndex = 0;

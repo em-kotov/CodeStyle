@@ -15,6 +15,8 @@ public class Turret : MonoBehaviour
 
     private IEnumerator ShootBullets()
     {
+        var wait = new WaitForSeconds(_delay);
+
         while (enabled)
         {
             Vector3 direction = (_target.position - transform.position).normalized;
@@ -23,7 +25,7 @@ public class Turret : MonoBehaviour
             bullet.transform.up = direction;
             bullet.velocity = direction * _speed;
 
-            yield return new WaitForSeconds(_delay);
+            yield return wait;
         }
     }
 }
